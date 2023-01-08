@@ -38,15 +38,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.GamblingStimulation (1)">
+  <component name="RunManager" selected="Application.GamblingStimulation">
     <configuration name="GamblingStimulation (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GamblingStimulation" />
-      <module name="Day_7_Problems_AnswersJ" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GamblingStimulation (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GamblingStimulation" />
       <module name="Day_7_Problems_AnswersJ" />
       <method v="2">
@@ -74,13 +67,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GamblingStimulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GamblingStimulation" />
+      <module name="Day_7_Problems_AnswersJ" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GamblingStimulation (1)" />
-        <item itemvalue="Application.GamblingStimulation (2)" />
+        <item itemvalue="Application.GamblingStimulation" />
         <item itemvalue="Application.GamblingStimulation (5)" />
         <item itemvalue="Application.GamblingStimulation (4)" />
         <item itemvalue="Application.GamblingStimulation (3)" />
+        <item itemvalue="Application.GamblingStimulation (1)" />
       </list>
     </recent_temporary>
   </component>
