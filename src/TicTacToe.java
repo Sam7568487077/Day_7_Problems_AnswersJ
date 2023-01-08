@@ -40,18 +40,29 @@ class TicTacToe01 {
         }
 
     }
-
-
     void userChoice() {
         Scanner sc1 = new Scanner(System.in);
+        int choice =(int)Math.floor(Math.random() * 10)%2;
 
-        System.out.print("Enter your choice X or O : ");
+        switch (choice) {
 
-        userChoice1 = sc1.next().charAt(0);
-        if (userChoice1 == 'X') {
-            systemChoice1 = '0';
-        } else {
-            systemChoice1 = 'X';
+            case 0:
+                System.out.println("User wins the toss");
+                System.out.print("Enter your choice X or O : ");
+
+                userChoice1 = sc1.next().charAt(0);
+                if (userChoice1 == 'X') {
+                    systemChoice1 = '0';
+                } else {
+                    systemChoice1 = 'X';
+                }
+                break;
+
+            case 1:
+                System.out.println("System wins the toss");
+               systemChoice1 = 'X';
+               userChoice1= 'O';
+               break;
         }
         System.out.println("The choice of user is :" + userChoice1);
         System.out.println("\n");
