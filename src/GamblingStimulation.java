@@ -10,6 +10,10 @@ class Gambler {
     int counter= 0;
     int daysWon = 0;
     int daysLost = 0;
+    float lastMaximumGainAmount = 0;
+    float lastmaximumLossAmount = 0;
+    float maxGain = 0;
+    float maxLoss = 0;
 
 
 
@@ -56,21 +60,63 @@ class Gambler {
 
     void outcomeSave()
     {
+
         if(currentStake > initialStake)
         {
-            gainAmount = gainAmount + (currentStake-initialStake);
-            daysWon =daysWon + 1;
+            float currentGainAmount = currentStake-initialStake;
+            if(currentGainAmount > lastMaximumGainAmount)
+            {
+                lastMaximumGainAmount = currentGainAmount;
+            }
+            gainAmount = gainAmount + (currentGainAmount);
+            daysWon = daysWon + 1;
+
+
 
 
         }
         else
         {
-            lossAmount = lossAmount + (initialStake-currentStake);
+            float currentLossAmount = initialStake-currentStake;
+            if(currentLossAmount > lastmaximumLossAmount)
+            {
+                lastmaximumLossAmount = currentLossAmount;
+            }
+            lossAmount = lossAmount + (currentLossAmount);
             daysLost = daysLost + 1;
+
 
         }
         System.out.println("Total gain amount is:" +gainAmount);
         System.out.println("Total loss amount is:" +lossAmount);
+        System.out.println("Last maximum gain amount was : " + lastMaximumGainAmount);
+        System.out.println("Last maximum loss amount was : " + lastmaximumLossAmount);
+      /*  if(maxGain >= gainAmount)
+        {
+            maxGain = gainAmount;
+            maxDayGain = maxDayGain;
+
+        }
+        else {
+            maxGain++;
+            maxDayGain = maxDayGain+1;
+        }
+
+        if(maxLoss > lossAmount)
+        {
+            maxLoss = maxLoss;
+            maxDayLoss = maxDayLoss;
+        }
+        else {
+            maxLoss++;
+            maxDayLoss = maxDayLoss+1;
+        }
+
+        System.out.println("The  maximum amount you lossed  is: "+ maxLoss);
+        System.out.println("The unluckiest day is : "+ maxDayLoss);
+        System.out.println("The  maximum amount you gained is: "+ maxGain);
+        System.out.println("The luckiest day is : "+ maxDayGain);  */
+
         initialStake = currentStake = 100;
         counter++;
         System.out.println("The number of days you betted: "+counter);
@@ -78,6 +124,20 @@ class Gambler {
         System.out.println("The days you lost in a month is :" +daysLost);
 
     }
+
+  /*  void maximumGainOrLoss(){
+
+        if(maxGain > gainAmount)
+        {
+            maxDayGain = maxDayGain;
+            System.out.println("The day you earned maximum amount is: "+ maxDayGain);
+        }
+        else {
+            maxGain++;
+            maxDayGain = maxDayGain+1;
+            System.out.println("The day you earned maximum amount is: "+ maxDayGain);
+        }
+    } */
 
 }
 public class GamblingStimulation {
@@ -96,6 +156,7 @@ public class GamblingStimulation {
             }
             System.out.println(" The bet has reached the resign conditon ...so further no play");
             g1.outcomeSave();
+        //    g1.maximumGainOrLoss();
             System.out.println("Enter Y to continue: ");
             playagain = 'Y';
 
