@@ -1,9 +1,10 @@
 import java.util.Random;
 import java.util.Scanner;
-class TicTacToe01{
+
+class TicTacToe01 {
     char userChoice1;
     char systemChoice1;
-    char [] boardSpaces = new char[10];
+    char[] boardSpaces = new char[10];
 
 
     TicTacToe01() {
@@ -22,34 +23,34 @@ class TicTacToe01{
 
     }
 
-        void show_Board(){
+    void show_Board() {
 
-            for(int i=0;i < (boardSpaces.length-1)/3;i++)
-            {
-                for(int j=3*i+1;j<3*i+1+3;j++) {
-                    System.out.print( boardSpaces[j] + "" + j + "   ");
-
+        for (int i = 0; i < (boardSpaces.length - 1) / 3; i++) {
+            for (int j = 3 * i + 1; j < 3 * i + 1 + 3; j++) {
+                if(boardSpaces[j] == 'N') {
+                    System.out.print(boardSpaces[j] + "" + j + "   ");
                 }
-                System.out.println("\n");
-            }
+                else
+                {
+                    System.out.print(boardSpaces[j] + "" + "   ");
+                }
 
+            }
+            System.out.println("\n");
         }
 
+    }
 
 
-
-    void userChoice(){
+    void userChoice() {
         Scanner sc1 = new Scanner(System.in);
 
         System.out.print("Enter your choice X or O : ");
 
-        userChoice1 =sc1.next().charAt(0);
-        if(userChoice1 == 'X')
-        {
+        userChoice1 = sc1.next().charAt(0);
+        if (userChoice1 == 'X') {
             systemChoice1 = '0';
-        }
-        else
-        {
+        } else {
             systemChoice1 = 'X';
         }
         System.out.println("The choice of user is :" + userChoice1);
@@ -58,9 +59,20 @@ class TicTacToe01{
         System.out.println("\n");
 
 
+    }
 
-
-
+    void userMove(){
+        Scanner sc1 = new Scanner(System.in);
+        System.out.println("Enter the position to move between 1 -9");
+        int index = sc1.nextInt();
+        if(boardSpaces[index] == 'N') {
+            boardSpaces[index] = userChoice1;
+            show_Board();
+        }
+        else
+        {
+            System.out.println("Can't move");
+        };
 
     }
 
@@ -68,14 +80,13 @@ class TicTacToe01{
 }
 
 
-
-
-
 public class TicTacToe {
     public static void main(String[] args) {
         TicTacToe01 t1 = new TicTacToe01();
         t1.userChoice();
         t1.show_Board();
+        t1.userMove();
+
 
 
     }
