@@ -5,9 +5,11 @@ class Gambler {
     float currentStake=0;
     int bettingAmount = 1;
     float fiftyPercentOfTake;
-    float gainAmount=0;
-    float lossAmount=0;
-    int counter=0;
+    float gainAmount = 0;
+    float lossAmount = 0;
+    int counter= 0;
+    int daysWon = 0;
+    int daysLost = 0;
 
 
 
@@ -42,7 +44,7 @@ class Gambler {
 
     }
 
-boolean gameResignCondition()
+    boolean gameResignCondition()
 
     {
 
@@ -54,32 +56,39 @@ boolean gameResignCondition()
 
     void outcomeSave()
     {
-       if(currentStake > initialStake)
-       {
-           gainAmount=gainAmount + (currentStake-initialStake);
+        if(currentStake > initialStake)
+        {
+            gainAmount = gainAmount + (currentStake-initialStake);
+            daysWon =daysWon + 1;
 
 
-       }
-       else
-       {
-          lossAmount=lossAmount + (initialStake-currentStake);
+        }
+        else
+        {
+            lossAmount = lossAmount + (initialStake-currentStake);
+            daysLost = daysLost + 1;
 
-       }
+        }
         System.out.println("Total gain amount is:" +gainAmount);
         System.out.println("Total loss amount is:" +lossAmount);
         initialStake = currentStake = 100;
         counter++;
-        System.out.println("The number od days you betted: "+counter);
+        System.out.println("The number of days you betted: "+counter);
+        System.out.println("The days you won in a month is :" +daysWon);
+        System.out.println("The days you lost in a month is :" +daysLost);
 
     }
+
 }
 public class GamblingStimulation {
 
     public static void main(String[] args) {
+
+        Gambler g1 = new Gambler();
+
         Scanner sc = new Scanner(System.in);
         char playagain = 'Y';
 
-        Gambler g1 = new Gambler();
 
         while (playagain == 'Y' && g1.counter < 20) {
             while (!g1.gameResignCondition()) {
@@ -89,10 +98,11 @@ public class GamblingStimulation {
             g1.outcomeSave();
             System.out.println("Enter Y to continue: ");
             playagain = 'Y';
+
+
         }
-
-
 
 
     }
 }
+
