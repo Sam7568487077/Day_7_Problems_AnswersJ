@@ -32,13 +32,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.GamblingStimulation (5)">
+}</component>
+  <component name="RunManager" selected="Application.GamblingStimulation (1)">
+    <configuration name="GamblingStimulation (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GamblingStimulation" />
+      <module name="Day_7_Problems_AnswersJ" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GamblingStimulation (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GamblingStimulation" />
       <module name="Day_7_Problems_AnswersJ" />
@@ -67,20 +74,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamblingStimulation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GamblingStimulation" />
-      <module name="Day_7_Problems_AnswersJ" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GamblingStimulation (1)" />
+        <item itemvalue="Application.GamblingStimulation (2)" />
         <item itemvalue="Application.GamblingStimulation (5)" />
         <item itemvalue="Application.GamblingStimulation (4)" />
         <item itemvalue="Application.GamblingStimulation (3)" />
-        <item itemvalue="Application.GamblingStimulation" />
-        <item itemvalue="Application.GamblingStimulation (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -94,5 +94,16 @@
       <updated>1673155012215</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

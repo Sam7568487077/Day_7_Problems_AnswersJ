@@ -1,14 +1,17 @@
 
 class Gambler {
 
-    int stake = 100;
+    int initialStake = 100;
+    int currentStake=0;
     int bettingAmount = 1;
 
 
 
     Gambler() {
-        System.out.print("The initial stake is : " + stake + "\n");
+        this.currentStake=this.initialStake;
+        System.out.print("The initial stake is : " + initialStake + "\n");
         System.out.print("The betting amount in every game is : " + bettingAmount + "\n");
+
     }
 
 
@@ -22,17 +25,26 @@ class Gambler {
             case 0:
                 System.out.println("You have won the bet");
                 System.out.println("\n");
-                stake=stake+bettingAmount;
+                currentStake=currentStake+bettingAmount;
                 break;
             case 1:
                 System.out.println("You have lost the bet ");
                 System.out.println("\n");
-                stake=stake-bettingAmount;
+                currentStake=currentStake-bettingAmount;
                 break;
         }
-        System.out.println("Your current stake is: " + stake);
+        System.out.println("Your current stake is: " + currentStake);
 
 
+    }
+
+boolean gameResignCondition()
+
+    {
+        float fiftyPercentOfTake;
+        fiftyPercentOfTake = (initialStake * 50) / 100;
+        float difference = Math.abs(currentStake - initialStake);
+        return difference == fiftyPercentOfTake;
     }
 
 }
@@ -41,7 +53,10 @@ public class GamblingStimulation {
     public static void main(String[] args) {
 
         Gambler g1 = new Gambler();
-        g1.outcomeGenerator();
+        while (!g1.gameResignCondition()) {
+            g1.outcomeGenerator();
+        }
+        System.out.println(" The bet has reached the resign conditon ...so further no play");
 
 
 
