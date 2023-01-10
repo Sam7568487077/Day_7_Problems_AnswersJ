@@ -72,9 +72,10 @@ class TicTacToe01 {
         else
         {
             System.out.println("Can't move");
-        };
+        }
 
     }
+
 
 
 }
